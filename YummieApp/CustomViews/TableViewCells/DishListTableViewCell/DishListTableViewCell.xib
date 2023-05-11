@@ -13,36 +13,34 @@
         <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="85" id="KGk-i7-Jjw" customClass="DishListTableViewCell" customModule="YummieApp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="328" height="85"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
                 <rect key="frame" x="0.0" y="0.0" width="328" height="85"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="weC-WN-CI7">
+                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="weC-WN-CI7">
                         <rect key="frame" x="0.0" y="0.0" width="328" height="85"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hQv-1z-mtK">
-                                <rect key="frame" x="8" y="8" width="77" height="69"/>
+                                <rect key="frame" x="8" y="8" width="77" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="8AC-tW-Vzv"/>
                                     <constraint firstAttribute="height" constant="80" id="Kmf-40-Am0"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="77" id="MnS-rU-jKP"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="Qvd-pW-FLu"/>
-                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="69" id="gf7-o0-6Ia"/>
                                     <constraint firstAttribute="width" constant="77" id="oT1-UP-T3V"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="70" id="yb2-dk-PsG"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xxJ-th-h6Z">
-                                <rect key="frame" x="93" y="8" width="220" height="69"/>
+                                <rect key="frame" x="93" y="8" width="220" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KS0-Xk-WcO">
-                                        <rect key="frame" x="0.0" y="0.0" width="220" height="34.666666666666664"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="220" height="40"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpP-AJ-yeT">
-                                        <rect key="frame" x="0.0" y="34.666666666666657" width="220" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="40" width="220" height="40"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="0.65973340849999995" green="0.65973340849999995" blue="0.65973340849999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <nil key="highlightedColor"/>
@@ -71,7 +69,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="dishListDescriptionLabel" destination="hpP-AJ-yeT" id="99s-gG-5se"/>
+                <outlet property="dishListDescriptionLabel" destination="hpP-AJ-yeT" id="lKx-nb-LKR"/>
                 <outlet property="dishListImageView" destination="hQv-1z-mtK" id="EWO-tt-Icj"/>
                 <outlet property="dishListTitleLabel" destination="KS0-Xk-WcO" id="rfB-rX-mOi"/>
             </connections>

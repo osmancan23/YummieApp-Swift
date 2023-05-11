@@ -32,4 +32,9 @@ class DishListTableViewCell: UITableViewCell {
         dishListImageView.kf.setImage(with: dishModel.image?.asUrl)
     }
     
+    func setup(orderModel:OrderModel)  {
+        dishListTitleLabel.text = orderModel.dish?.name
+        dishListDescriptionLabel.text = orderModel.name
+        dishListImageView.kf.setImage(with: orderModel.dish?.image?.asUrl)
+    }
 }
