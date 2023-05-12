@@ -15,10 +15,9 @@ class NetworkService {
         
     }
     
-    func firstRequest(completion: @escaping (Result<String,Error>)-> Void)  {
-        request(route: .temp, method: .get, type: String.self, completion: completion)
+    func fetchAllCategories(completion: @escaping(Result<AllDishesModel,Error>)-> Void)  {
+        request(route: .fetchAllCategories, method: .get,  completion: completion)
     }
-    
     
     private func handleResponse<T: Decodable>(result: Result<Data, Error>?,
                                               completion: (Result<T, Error>) -> Void) {
@@ -58,7 +57,7 @@ class NetworkService {
     
     
     
-    private func request<T : Codable> (route:Route, method: Method ,parameters: [String :Any]? = nil , type: T.Type, completion: @escaping(Result<T, Error>) -> Void) {
+    private func request<T : Codable> (route:Route, method: Method ,parameters: [String :Any]? = nil , completion: @escaping(Result<T, Error>) -> Void) {
         guard let request = createRequest(route: route, method: method,parameters: parameters) else {
             completion(.failure(AppError.unknownError))
             return

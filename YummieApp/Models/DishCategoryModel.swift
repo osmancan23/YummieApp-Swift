@@ -7,6 +7,12 @@
 
 import Foundation
 
-struct DishCategoryModel {
-    let title , image , id : String
+struct DishCategoryModel: Codable {
+    let id, name, image: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case name = "title"
+        case image
+    }
 }

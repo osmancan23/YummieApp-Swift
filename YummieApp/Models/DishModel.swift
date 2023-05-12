@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DishModel: Decodable {
+struct DishModel: Codable {
     let id, name, description, image: String?
     let calories: Int?
     

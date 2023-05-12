@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class HomeViewController: UIViewController {
 
@@ -15,39 +16,34 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var specialCollectionView: UICollectionView!
     
-    var categories : [DishCategoryModel] = [
-        .init(title: "id1", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", id: "1"),
-        .init(title: "id2", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", id: "1"),
-        .init(title: "id3", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", id: "1"),
-        .init(title: "id4", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", id: "1"),
-        .init(title: "id5", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", id: "1")
-    ]
+    var categories : [DishCategoryModel] = []
     
-    var populars: [DishModel] = [
-        .init(id: "id1", name: "Mantı", description: "Kayseri", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", calories: 35),
-        .init(id: "id2", name: "Yuvarlama", description: "Gaziantep", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", calories: 60),
-        .init(id: "id3", name: "Kebap", description: "Adana", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", calories: 100),
-        .init(id: "id4", name: "Cag Kebabı", description: "Erzurum", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", calories: 150),
-    ]
+    var populars: [DishModel] = []
     
-    var specials: [DishModel] = [
-        .init(id: "id1", name: "Mantı", description: "Kayseri", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", calories: 35),
-        .init(id: "id2", name: "Yuvarlama", description: "Gaziantep", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", calories: 60),
-        .init(id: "id3", name: "Kebap", description: "Adana", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", calories: 100),
-        .init(id: "id4", name: "Cag Kebabı", description: "Erzurum", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", calories: 150),
-    ]
+    var specials: [DishModel] = []
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NetworkService.instance.firstRequest { result in
+       
+        ProgressHUD.show()
+        NetworkService.instance.fetchAllCategories {  result in
             switch result {
-            case .success(let data):
-                print(data.self)
+            case .success(let allDishModel):
+                ProgressHUD.dismiss()
+                self.categories = allDishModel.categories ?? []
+                self.populars = allDishModel.populars ?? []
+                self.specials = allDishModel.specials ?? []
+                
+                self.categoryCollectionView.reloadData()
+                self.popularCollectionView.reloadData()
+                self.specialCollectionView.reloadData()
+                
             case .failure(let error):
-                print(error.localizedDescription)
+                ProgressHUD.showError(error.localizedDescription)
             }
+        
         }
         registerCells()
     }

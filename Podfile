@@ -6,6 +6,7 @@ target 'YummieApp' do
   use_frameworks!
 
   pod "Kingfisher" 
+  pod "ProgressHUD"
 
   # Pods for YummieApp
 
