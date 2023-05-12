@@ -40,15 +40,15 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        categoryCollectionView.dataSource = self
-        categoryCollectionView.delegate = self
-       
-        popularCollectionView.delegate = self
-        popularCollectionView.dataSource = self
         
-        specialCollectionView.dataSource = self
-        specialCollectionView.delegate = self
-        
+        NetworkService.instance.firstRequest { result in
+            switch result {
+            case .success(let data):
+                print(data.self)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
         registerCells()
     }
     

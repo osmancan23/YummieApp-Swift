@@ -165,6 +165,10 @@
                                                                 </collectionViewCellContentView>
                                                             </collectionViewCell>
                                                         </cells>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="SxJ-fU-PCE" id="Tyb-Tm-vly"/>
+                                                            <outlet property="delegate" destination="SxJ-fU-PCE" id="N87-Fb-eNJ"/>
+                                                        </connections>
                                                     </collectionView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -214,6 +218,10 @@
                                                                 </collectionViewCellContentView>
                                                             </collectionViewCell>
                                                         </cells>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="SxJ-fU-PCE" id="4yG-Zi-qMX"/>
+                                                            <outlet property="delegate" destination="SxJ-fU-PCE" id="GQ5-Sg-KPQ"/>
+                                                        </connections>
                                                     </collectionView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -263,6 +271,10 @@
                                                                 </collectionViewCellContentView>
                                                             </collectionViewCell>
                                                         </cells>
+                                                        <connections>
+                                                            <outlet property="dataSource" destination="SxJ-fU-PCE" id="fDh-13-60k"/>
+                                                            <outlet property="delegate" destination="SxJ-fU-PCE" id="tKK-ez-Mn8"/>
+                                                        </connections>
                                                     </collectionView>
                                                 </subviews>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
