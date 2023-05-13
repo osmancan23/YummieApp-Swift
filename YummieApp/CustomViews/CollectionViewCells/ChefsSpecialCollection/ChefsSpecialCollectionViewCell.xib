@@ -42,6 +42,9 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4ul-LX-5bJ">
                                                 <rect key="frame" x="0.0" y="26" width="163" height="26"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="163" id="fL2-SH-dvy"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <color key="textColor" red="0.65973340849999995" green="0.65973340849999995" blue="0.65973340849999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <nil key="highlightedColor"/>
