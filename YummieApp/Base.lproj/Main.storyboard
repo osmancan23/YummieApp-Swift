@@ -402,7 +402,6 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="361" id="9cc-tX-FbI"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="CAm-lh-Vei"/>
                                             <constraint firstAttribute="height" constant="50" id="CCp-qo-I5f"/>
                                         </constraints>
                                     </stackView>

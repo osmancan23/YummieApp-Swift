@@ -13,6 +13,12 @@
 		CD1776E12A0ABDB10037E3C5 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1776DF2A0ABDB10037E3C5 /* CategoryCollectionViewCell.swift */; };
 		CD1776E22A0ABDB10037E3C5 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD1776E02A0ABDB10037E3C5 /* CategoryCollectionViewCell.xib */; };
 		CD1776E52A0ABF570037E3C5 /* DishCategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD1776E42A0ABF570037E3C5 /* DishCategoryModel.swift */; };
+		CD2EF0CD2A0FD871002293E8 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2EF0C72A0FD871002293E8 /* 6.png */; };
+		CD2EF0CE2A0FD871002293E8 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2EF0C82A0FD871002293E8 /* 4.png */; };
+		CD2EF0CF2A0FD871002293E8 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2EF0C92A0FD871002293E8 /* 5.png */; };
+		CD2EF0D02A0FD871002293E8 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2EF0CA2A0FD871002293E8 /* 1.png */; };
+		CD2EF0D12A0FD871002293E8 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2EF0CB2A0FD871002293E8 /* 2.png */; };
+		CD2EF0D22A0FD871002293E8 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = CD2EF0CC2A0FD871002293E8 /* 3.png */; };
 		CD4F33682A0A4E15009835A5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD4F33672A0A4E15009835A5 /* HomeViewController.swift */; };
 		CD81BF472A0E64E1008CF657 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD81BF462A0E64E1008CF657 /* NetworkService.swift */; };
 		CD81BF492A0E6527008CF657 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD81BF482A0E6527008CF657 /* Route.swift */; };
@@ -52,6 +58,12 @@
 		CD1776DF2A0ABDB10037E3C5 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		CD1776E02A0ABDB10037E3C5 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		CD1776E42A0ABF570037E3C5 /* DishCategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DishCategoryModel.swift; sourceTree = "<group>"; };
+		CD2EF0C72A0FD871002293E8 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 6.png; path = YummieApp/Image/6.png; sourceTree = SOURCE_ROOT; };
+		CD2EF0C82A0FD871002293E8 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 4.png; path = YummieApp/Image/4.png; sourceTree = SOURCE_ROOT; };
+		CD2EF0C92A0FD871002293E8 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 5.png; path = YummieApp/Image/5.png; sourceTree = SOURCE_ROOT; };
+		CD2EF0CA2A0FD871002293E8 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = YummieApp/Image/1.png; sourceTree = SOURCE_ROOT; };
+		CD2EF0CB2A0FD871002293E8 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 2.png; path = YummieApp/Image/2.png; sourceTree = SOURCE_ROOT; };
+		CD2EF0CC2A0FD871002293E8 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 3.png; path = YummieApp/Image/3.png; sourceTree = SOURCE_ROOT; };
 		CD4F33672A0A4E15009835A5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CD81BF462A0E64E1008CF657 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		CD81BF482A0E6527008CF657 /* Route.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
@@ -130,6 +142,19 @@
 				CD1776E02A0ABDB10037E3C5 /* CategoryCollectionViewCell.xib */,
 			);
 			path = CategoryCollection;
+			sourceTree = "<group>";
+		};
+		CD2EF0C62A0FD864002293E8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				CD2EF0CA2A0FD871002293E8 /* 1.png */,
+				CD2EF0CB2A0FD871002293E8 /* 2.png */,
+				CD2EF0CC2A0FD871002293E8 /* 3.png */,
+				CD2EF0C82A0FD871002293E8 /* 4.png */,
+				CD2EF0C92A0FD871002293E8 /* 5.png */,
+				CD2EF0C72A0FD871002293E8 /* 6.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		CD4F33662A0A4DF9009835A5 /* Home */ = {
@@ -241,6 +266,7 @@
 		CDF73DD82A096B4600AAE111 /* YummieApp */ = {
 			isa = PBXGroup;
 			children = (
+				CD2EF0C62A0FD864002293E8 /* Images */,
 				CD81BF452A0E64CF008CF657 /* Network */,
 				CD1776DD2A0ABD870037E3C5 /* CustomViews */,
 				CDF73DF32A09770F00AAE111 /* Extensions */,
@@ -368,12 +394,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD2EF0D02A0FD871002293E8 /* 1.png in Resources */,
+				CD2EF0CE2A0FD871002293E8 /* 4.png in Resources */,
+				CD2EF0CF2A0FD871002293E8 /* 5.png in Resources */,
 				CDFEB09E2A0C36350032DDF5 /* ChefsSpecialCollectionViewCell.xib in Resources */,
 				CD9B08862A0D6927000FBFE4 /* DishListTableViewCell.xib in Resources */,
 				CD1776E22A0ABDB10037E3C5 /* CategoryCollectionViewCell.xib in Resources */,
+				CD2EF0D12A0FD871002293E8 /* 2.png in Resources */,
 				CDAA5B882A0BA36E000A4C59 /* PopularDishCollectionViewCell.xib in Resources */,
+				CD2EF0D22A0FD871002293E8 /* 3.png in Resources */,
 				CDF73DE62A096B4700AAE111 /* LaunchScreen.storyboard in Resources */,
 				CDF73DE32A096B4700AAE111 /* Assets.xcassets in Resources */,
+				CD2EF0CD2A0FD871002293E8 /* 6.png in Resources */,
 				CDF73DE12A096B4700AAE111 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
