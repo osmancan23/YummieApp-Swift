@@ -14,6 +14,20 @@ class NetworkService {
     private init(){
         
     }
+    func fetchOrders(completion: @escaping(Result<[OrderModel],Error>)->Void) {
+        request(route: .fetchOrders, method: .get, completion: completion)
+    }
+    
+    
+    func fetchCategoryDishes(categoryId:String,completion: @escaping(Result<[DishModel],Error>) -> Void)  {
+        request(route: .fetchCategoryDishes(categoryId), method: .get, completion: completion)
+    }
+    
+    func placeOrder(dishName:String,dishId:String,completion: @escaping(Result<OrderModel,Error>)-> Void)  {
+        let params = ["name": dishName]
+
+        request(route: .placeOrder(dishId), method: .post, parameters: params, completion: completion)
+    }
     
     func fetchAllCategories(completion: @escaping(Result<AllDishesModel,Error>)-> Void)  {
         request(route: .fetchAllCategories, method: .get,  completion: completion)

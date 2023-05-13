@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class ListDishesViewController: UIViewController {
 
@@ -13,16 +14,24 @@ class ListDishesViewController: UIViewController {
     
     var dishCategory : DishCategoryModel!
     
-    var dishList: [DishModel] = [
-        .init(id: "id1", name: "Mantı", description: "Kayseri", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", calories: 35),
-        .init(id: "id2", name: "Yuvarlama", description: "Gaziantep", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", calories: 60),
-        .init(id: "id3", name: "Kebap", description: "Adana", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", calories: 100),
-        .init(id: "id4", name: "Cag Kebabı", description: "Erzurum", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", calories: 150),
-    ]
+    var dishList: [DishModel] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         title = dishCategory.name
+        ProgressHUD.show("Loading...")
+        NetworkService.instance.fetchCategoryDishes(categoryId: dishCategory.id!) { result in
+            switch result {
+            case .success(let list):
+                ProgressHUD.dismiss()
+                self.dishList=list
+                self.listDishTableView.reloadData()
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+                
+            }
+        }
+        
         registerCell()
     }
     
@@ -37,7 +46,6 @@ class ListDishesViewController: UIViewController {
 
 extension ListDishesViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(dishList.count)
         return dishList.count
     }
     

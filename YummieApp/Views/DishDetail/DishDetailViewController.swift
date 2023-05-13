@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import ProgressHUD
 class DishDetailViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
@@ -30,6 +30,22 @@ class DishDetailViewController: UIViewController {
     }
     
     @IBAction func sendPlaceOrder(_ sender: Any) {
+        
+        guard let name = nameTextField.text?.trimmingCharacters(in: .whitespaces),
+                     !name.isEmpty else {
+                   ProgressHUD.showError("Please enter your name")
+                   return
+               }
+        
+        ProgressHUD.show("Placing Order...")
+        NetworkService.instance.placeOrder(dishName: name, dishId: dish.id!) { result in
+            switch result {
+            case .success(_):
+                ProgressHUD.showSucceed("Your order has been received. 👨🏼‍🍳")
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
     }
     
     

@@ -6,19 +6,26 @@
 //
 
 import UIKit
+import ProgressHUD
 
 class ListOrderViewController: UIViewController {
     
     @IBOutlet weak var orderTableView: UITableView!
-    var orderList : [OrderModel] = [
-        .init(id: "id1", name: "Order 1", dish: DishModel(id: "id1", name: "Mantı", description: "Kayseri", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", calories: 35)),
-        .init(id: "id2", name: "Order 2", dish: DishModel(id: "id2", name: "Mantı", description: "Kayseri", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", calories: 35)),
-        .init(id: "id3", name: "Order 3", dish: DishModel(id: "id3", name: "Mantı", description: "Kayseri", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", calories: 35)),
-        .init(id: "id4", name: "Order 4", dish: DishModel(id: "id4", name: "Mantı", description: "Kayseri", image: "https://cdn.yemek.com/mnresize/940/940/uploads/2020/08/manti-tarifi-guncelleme-son.jpg", calories: 35)),
-    ]
+    var orderList : [OrderModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ProgressHUD.show("Loading...")
+        NetworkService.instance.fetchOrders { result in
+            switch result {
+            case .success(let list):
+                ProgressHUD.dismiss()
+                self.orderList = list
+                self.orderTableView.reloadData()
+            case .failure(let error):
+                ProgressHUD.showError(error.localizedDescription)
+            }
+        }
         registerCell()
     }
     

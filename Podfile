@@ -7,7 +7,7 @@ target 'YummieApp' do
 
   pod "Kingfisher" 
   pod "ProgressHUD"
-
+  pod "IQKeyboardManagerSwift"
   # Pods for YummieApp
 
 end
